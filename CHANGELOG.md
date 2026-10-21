@@ -5,6 +5,15 @@
 
 ## [Unreleased]
 
+### v0.1.1 (21/10/2026) — `eval-3` discriminante (iteration-2)
+
+- **Alterado:** `evals/evals.json` — `eval-3` reescrito: prompt menos prescritivo (não dita
+  JSON/backup/preview) e assertions sobre o "como" da skill (regiões protegidas, formato de backup
+  `YYYYMMDD_HHMMSS`, `changelog-convention`, `.gitignore`, estrutura e testes herméticos).
+- **Validado:** `iteration-2` (só o `eval-3`) — with-skill **7/7 (100%)** vs baseline **4/7 (57%)**,
+  delta **+0.43**. Antes (iteration-1) era 100% × 100% (não discriminava).
+- **Arquivos:** `evals/evals.json`; workspace em `~/projetos/criacao-bot-telegram-workspace/`.
+
 ### v0.1.0 (21/10/2026) — Skill criada e validada (iteration-1)
 
 - **Adicionado:** `SKILL.md` (metodologia fases 0–7, princípios, checklist de kickoff, anti-padrões).

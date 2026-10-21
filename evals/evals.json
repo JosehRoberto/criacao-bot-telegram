@@ -31,15 +31,17 @@
     },
     {
       "id": 3,
-      "prompt": "Preciso montar o kickoff de um bot Telegram que cadastra pedidos num arquivo JSON, com backup antes de gravar e preview antes de aprovar.",
-      "expected_output": "O agente registra decisões (modelo de dados, persistência, backup, preview/aprovação), cria a estrutura e os arquivos iniciais, e deixa as regras de negócio do domínio (pedidos, JSON) adaptadas no AGENTS.md/requisitos.",
+      "prompt": "Preciso montar o kickoff de um bot Telegram para a equipe registrar pedidos internos. Ainda não detalhei os requisitos; quero começar o projeto com a estrutura e a documentação nos trilhos.",
+      "expected_output": "O agente conduz o kickoff da skill sem que o usuário tenha ditado os requisitos: registra requisitos/decisões (incluindo persistência), cria a estrutura, gera AGENTS.md (com regiões protegidas e política de backup), CHANGELOG.md atrelado à convenção changelog-convention, .gitignore adequado e prevê testes herméticos.",
       "files": [],
       "expectations": [
-        "As decisões de modelo de dados e persistência (JSON) foram registradas em docs/requisitos.md",
-        "A política de backup (backup antes de gravar) está explícita no AGENTS.md",
-        "O fluxo de preview + aprovação antes de gravar está previsto nos requisitos",
-        "Foi indicado teste hermético para o serviço de escrita no JSON (tmp_path/monkeypatch)",
-        "A ordem de implementação sugerida coloca os serviços de dados e backup antes dos handlers"
+        "AGENTS.md contém seção de regiões protegidas",
+        "AGENTS.md define política de backup com formato de nome (YYYYMMDD_HHMMSS)",
+        "CHANGELOG.md no formato [Unreleased] + marco vX.Y + Legenda",
+        "Convenção de changelog referenciada como changelog-convention",
+        ".gitignore cobre .env e backup/*.bak",
+        "estrutura bot/ com handlers, models, schemas, services e tests",
+        "prevê teste hermético (tmp_path/monkeypatch) para os serviços"
       ]
     }
   ]
