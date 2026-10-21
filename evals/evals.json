@@ -1,0 +1,46 @@
+{
+  "skill_name": "criacao-bot-telegram",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Quero criar um novo bot no Telegram que lê uma planilha de gastos e envia lembretes de vencimento. Me ajude a montar a estrutura inicial do projeto.",
+      "expected_output": "O agente conduz o kickoff: registra objetivo/requisitos, cria a estrutura de pastas (bot/, backup/, docs/), gera AGENTS.md, CHANGELOG.md e .gitignore, e indica os próximos passos (config, testes, deploy).",
+      "files": [],
+      "expectations": [
+        "Foi criado ou proposto um AGENTS.md com seções de contexto, backup, testes e git",
+        "Foi criado ou proposto um CHANGELOG.md no formato [Unreleased] + marco vX.Y + Legenda",
+        "Foi criado ou proposto um .gitignore cobrindo .env, backup/*.bak e caches Python",
+        "Foi criada ou proposta a estrutura bot/ com handlers, models, schemas, services e tests",
+        "O objetivo e os requisitos foram registrados em docs/ (prompt-inicial e/ou requisitos)",
+        "A convenção de changelog foi referenciada como a skill changelog-convention (sem reimplementá-la)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Vou começar um bot do zero (ainda não escolhi nada). Preciso do AGENTS.md, CHANGELOG.md e da estrutura de pastas para já começar certo.",
+      "expected_output": "O agente usa a metodologia de kickoff, gera os artefatos iniciais a partir dos templates e adapta as seções específicas ao objetivo informado (ou faz perguntas curtas quando faltar objetivo).",
+      "files": [],
+      "expectations": [
+        "O agente busca o objetivo do bot antes de preencher regras de negócio específicas",
+        "AGENTS.md gerado contém a seção de regiões protegidas",
+        "AGENTS.md gerado contém a política de backup com formato de nome de arquivo",
+        "CHANGELOG.md inicia em v0.1.0 com data",
+        "A estrutura de pastas inclui backup/ e docs/ além de bot/",
+        "O agente menciona git init -b main e remote origin"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Preciso montar o kickoff de um bot Telegram que cadastra pedidos num arquivo JSON, com backup antes de gravar e preview antes de aprovar.",
+      "expected_output": "O agente registra decisões (modelo de dados, persistência, backup, preview/aprovação), cria a estrutura e os arquivos iniciais, e deixa as regras de negócio do domínio (pedidos, JSON) adaptadas no AGENTS.md/requisitos.",
+      "files": [],
+      "expectations": [
+        "As decisões de modelo de dados e persistência (JSON) foram registradas em docs/requisitos.md",
+        "A política de backup (backup antes de gravar) está explícita no AGENTS.md",
+        "O fluxo de preview + aprovação antes de gravar está previsto nos requisitos",
+        "Foi indicado teste hermético para o serviço de escrita no JSON (tmp_path/monkeypatch)",
+        "A ordem de implementação sugerida coloca os serviços de dados e backup antes dos handlers"
+      ]
+    }
+  ]
+}
